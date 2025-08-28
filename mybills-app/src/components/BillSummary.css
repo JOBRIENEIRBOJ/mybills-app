@@ -1,0 +1,121 @@
+.bill-summary {
+  padding: 20px;
+  margin-bottom: 8px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.summary-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.summary-card.total .summary-icon {
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  color: white;
+}
+
+.summary-card.paid .summary-icon {
+  background: linear-gradient(135deg, var(--success-color), #059669);
+  color: white;
+}
+
+.summary-card.overdue .summary-icon {
+  background: linear-gradient(135deg, var(--danger-color), #dc2626);
+  color: white;
+}
+
+.summary-card.total-amount .summary-icon {
+  background: linear-gradient(135deg, var(--warning-color), #d97706);
+  color: white;
+}
+
+.summary-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-bottom: 2px;
+}
+
+.summary-amount {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+@media (max-width: 480px) {
+  .bill-summary {
+    padding: 16px;
+  }
+  
+  .summary-grid {
+    gap: 12px;
+  }
+  
+  .summary-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .summary-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .summary-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .summary-value {
+    font-size: 20px;
+  }
+  
+  .summary-label {
+    font-size: 12px;
+  }
+  
+  .summary-amount {
+    font-size: 11px;
+  }
+}

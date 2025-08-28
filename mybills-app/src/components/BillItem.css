@@ -1,0 +1,230 @@
+.bill-item {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid;
+  transition: all 0.2s ease;
+}
+
+.bill-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.bill-item.upcoming {
+  border-left-color: var(--primary-color);
+}
+
+.bill-item.paid {
+  border-left-color: var(--success-color);
+  opacity: 0.8;
+}
+
+.bill-item.overdue {
+  border-left-color: var(--danger-color);
+}
+
+.bill-checkbox-container {
+  flex-shrink: 0;
+}
+
+.bill-checkbox {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--gray-300);
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.bill-checkbox:hover {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
+}
+
+.bill-checkbox.checked {
+  background: var(--success-color);
+  border-color: var(--success-color);
+  color: white;
+}
+
+.bill-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.bill-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.bill-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+  flex-shrink: 0;
+}
+
+.bill-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bill-status {
+  font-size: 14px;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.bill-item.overdue .bill-status {
+  color: var(--danger-color);
+  font-weight: 600;
+}
+
+.bill-item.paid .bill-status {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+.bill-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.edit-button, .delete-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+.edit-button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.delete-button {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+.delete-button:hover {
+  background: var(--danger-color);
+  color: white;
+}
+
+.bill-item.editing {
+  padding: 16px 20px;
+}
+
+.edit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-group input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background: var(--success-color);
+  color: white;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button:hover {
+  background: #059669;
+}
+
+.edit-actions .cancel-button {
+  background: var(--gray-200);
+  color: var(--gray-600);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.edit-actions .cancel-button:hover {
+  background: var(--gray-300);
+}
+
+@media (max-width: 480px) {
+  .bill-item {
+    margin: 8px 16px;
+    padding: 16px;
+  }
+  
+  .bill-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .bill-name {
+    max-width: none;
+  }
+  
+  .bill-amount {
+    font-size: 18px;
+  }
+  
+  .edit-form {
+    gap: 10px;
+  }
+}
